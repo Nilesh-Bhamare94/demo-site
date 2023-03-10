@@ -9,7 +9,7 @@ import { Button } from "react-bootstrap";
 const Read = () => {
   const [users] = useContext(UserContext);
   const { id } = useParams();
-  const user = users.filter((user) => user.id === id);
+  const user = users.filter((user) => user?.id == id);
 
   return (
     <div className="read">

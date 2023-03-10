@@ -10,11 +10,11 @@ import { useState } from "react";
 const Edit = () => {
   const [users, setUser] = useContext(UserContext);
   const { id } = useParams();
-  const user = users.filter((user) => user.id === id);
+  const user = users.filter((user) => user.id == id);
 
-  const [name, setName] = useState(user[0].name);
-  const [position, setPosition] = useState(user[0].position);
-  const [salary, setSalary] = useState(user[0].salary);
+  const [name, setName] = useState(user[0]?.name);
+  const [position, setPosition] = useState(user[0]?.position);
+  const [salary, setSalary] = useState(user[0]?.salary);
 
   const editName = (e) => {
     setName(e.target.value);
