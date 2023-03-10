@@ -10,7 +10,8 @@ import { useState } from "react";
 const Edit = () => {
   const [users, setUser] = useContext(UserContext);
   const { id } = useParams();
-  const user = users.filter((user) => user.id == id);
+  const ids = id === undefined ? 1 : id;
+  const user = users.filter((user) => user.id === ids);
 
   const [name, setName] = useState(user[0]?.name);
   const [position, setPosition] = useState(user[0]?.position);

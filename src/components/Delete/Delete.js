@@ -8,9 +8,10 @@ import "./Delete.css";
 const Delete = () => {
   const [users, setUser] = useContext(UserContext);
   const { id } = useParams();
+  const ids = id === undefined ? 1 : id;
 
   const deleteUser = (id) => {
-    const user = users?.filter((user) => user?.id != id);
+    const user = users?.filter((user) => user?.id !== ids);
     setUser([...user]);
   };
 
